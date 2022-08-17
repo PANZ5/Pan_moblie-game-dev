@@ -6,14 +6,15 @@ public class CropsManager : MonoBehaviour
 {
     public Crops crop;
     float timer;
+    public GameObject plot;
+
+    [HideInInspector]
+    public bool isMature = false;
     
     // Start is called before the first frame update
     void Start()
     {
-        crop.growStage = 0;
-        crop.SetUpGrowGap(0);
-        timer = crop.growGap;
-        crop.Print();
+        Reset();
     }
 
     // Update is called once per frame
@@ -27,5 +28,29 @@ public class CropsManager : MonoBehaviour
             timer = crop.growGap;
             crop.Print();
         }
+    }
+
+    public void Reset()
+    {
+        crop.growStage = 0;
+        crop.SetUpGrowGap(0);
+        timer = crop.growGap;
+        isMature = false;
+        crop.Print();
+    }
+
+    // check if crop is mature
+    public void CheckHarvest()
+    {
+        if (crop.growStage == 4)
+        {
+            isMature = true;
+        }
+    }
+
+    // optimize harvesting
+    private void OnMouseDown()
+    {
+        plot.GetComponent<PlotsManager>().Harvesting();
     }
 }
