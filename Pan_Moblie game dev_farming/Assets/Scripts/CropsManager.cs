@@ -10,6 +10,9 @@ public class CropsManager : MonoBehaviour
 
     [HideInInspector]
     public bool isMature = false;
+
+    [HideInInspector]
+    public int harvestGold = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -36,6 +39,7 @@ public class CropsManager : MonoBehaviour
         crop.SetUpGrowGap(0);
         timer = crop.growGap;
         isMature = false;
+        harvestGold = crop.sellGold;
         crop.Print();
     }
 

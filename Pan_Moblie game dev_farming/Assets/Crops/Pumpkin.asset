@@ -17,7 +17,7 @@ MonoBehaviour:
   small_gtime: 20
   medium_gtime: 30
   mature_gtime: 35
-  sellGold: 0
-  growStage: 0
-  growGap: 0
-  currentStage: 
+  sellGold: 75
+  growStage: 2
+  growGap: 30
+  currentStage: small

@@ -6,6 +6,7 @@ public class PlotsManager : MonoBehaviour
 {
     bool isPlanting = false;
     public GameObject plant;
+    public GoldSystem goldSystem;
     
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,9 @@ public class PlotsManager : MonoBehaviour
         {
             plant.SetActive(false);
             isPlanting = false;
+
+            // add gold after harvest
+            goldSystem.Gold += plant.GetComponent<CropsManager>().harvestGold;
         }
     }
     
