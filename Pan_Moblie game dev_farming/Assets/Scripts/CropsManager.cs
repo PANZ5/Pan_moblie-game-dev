@@ -49,8 +49,8 @@ public class CropsManager : MonoBehaviour
     }
 
     // optimize harvesting
-    private void OnMouseDown()
-    {
-        plot.GetComponent<PlotsManager>().Harvesting();
-    }
+    // private void OnMouseDown()
+    // {
+    //     plot.GetComponent<PlotsManager>().Harvesting();
+    // }
 }
