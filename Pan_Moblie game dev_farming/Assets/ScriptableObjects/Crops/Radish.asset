@@ -10,9 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84a2aa4108252ad4ca01f56fc3278fc5, type: 3}
-  m_Name: Carrot
+  m_Name: Radish
   m_EditorClassIdentifier: 
-  cropName: carrot
+  cropName: radish
+  cropSprites:
+  - {fileID: -1489595994, guid: ba8cb7102384d418883ef909ed3befd5, type: 3}
+  - {fileID: 718811943, guid: ba8cb7102384d418883ef909ed3befd5, type: 3}
+  - {fileID: 1774969089, guid: ba8cb7102384d418883ef909ed3befd5, type: 3}
+  - {fileID: -1256380199, guid: ba8cb7102384d418883ef909ed3befd5, type: 3}
+  - {fileID: -455393919, guid: ba8cb7102384d418883ef909ed3befd5, type: 3}
   sprout_gtime: 2
   small_gtime: 5
   medium_gtime: 10
@@ -20,3 +26,4 @@ MonoBehaviour:
   sellGold: 25
   growStage: 0
   growGap: 0
+  currentStage: 

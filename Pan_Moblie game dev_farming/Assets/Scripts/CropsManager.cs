@@ -28,6 +28,7 @@ public class CropsManager : MonoBehaviour
         if (timer < 0 && crop.growStage <= 3)
         {
             crop.Growing();
+            RenewSprite();
             timer = crop.growGap;
             crop.Print();
         }
@@ -37,6 +38,7 @@ public class CropsManager : MonoBehaviour
     {
         crop.growStage = 0;
         crop.SetUpGrowGap(0);
+        RenewSprite();
         timer = crop.growGap;
         isMature = false;
         harvestGold = crop.sellGold;
@@ -50,6 +52,11 @@ public class CropsManager : MonoBehaviour
         {
             isMature = true;
         }
+    }
+
+    public void RenewSprite()
+    {
+        this.GetComponent<SpriteRenderer>().sprite = crop.cropSprites[crop.growStage];
     }
 
     // optimize harvesting

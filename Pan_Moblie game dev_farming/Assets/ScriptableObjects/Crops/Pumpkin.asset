@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Pumpkin
   m_EditorClassIdentifier: 
   cropName: pumpkin
+  cropSprites:
+  - {fileID: -171679066, guid: 0f8fa26bd67a74039b2bfcc93554e8a2, type: 3}
+  - {fileID: 2025822110, guid: 0f8fa26bd67a74039b2bfcc93554e8a2, type: 3}
+  - {fileID: 1261225977, guid: 0f8fa26bd67a74039b2bfcc93554e8a2, type: 3}
+  - {fileID: 1188135482, guid: 0f8fa26bd67a74039b2bfcc93554e8a2, type: 3}
+  - {fileID: 1454489578, guid: 0f8fa26bd67a74039b2bfcc93554e8a2, type: 3}
   sprout_gtime: 10
   small_gtime: 20
   medium_gtime: 30
