@@ -13,6 +13,24 @@ public class CropsManager : MonoBehaviour
 
     [HideInInspector]
     public int harvestGold = 0;
+
+    [HideInInspector]
+    public int growStage = 0;
+
+    [HideInInspector]
+    public float growGap;
+
+    [HideInInspector]
+    public string currentStage;
+
+    enum Grow
+    {
+        seed,
+        sprout,
+        small,
+        medium,
+        mature
+    }
     
     // Start is called before the first frame update
     void Start()
@@ -25,30 +43,30 @@ public class CropsManager : MonoBehaviour
     {
         timer -= Time.deltaTime;
 
-        if (timer < 0 && crop.growStage <= 3)
+        if (timer < 0 && growStage <= 3)
         {
-            crop.Growing();
+            Growing();
             RenewSprite();
-            timer = crop.growGap;
-            crop.Print();
+            timer = growGap;
+            Print();
         }
     }
 
     public void Reset()
     {
-        crop.growStage = 0;
-        crop.SetUpGrowGap(0);
+        growStage = 0;
+        SetUpGrowGap(0);
         RenewSprite();
-        timer = crop.growGap;
+        timer = growGap;
         isMature = false;
         harvestGold = crop.sellGold;
-        crop.Print();
+        Print();
     }
 
     // check if crop is mature
     public void CheckHarvest()
     {
-        if (crop.growStage == 4)
+        if (growStage == 4)
         {
             isMature = true;
         }
@@ -56,12 +74,49 @@ public class CropsManager : MonoBehaviour
 
     public void RenewSprite()
     {
-        this.GetComponent<SpriteRenderer>().sprite = crop.cropSprites[crop.growStage];
+        this.GetComponent<SpriteRenderer>().sprite = crop.cropSprites[growStage];
     }
 
-    // optimize harvesting
-    // private void OnMouseDown()
-    // {
-    //     plot.GetComponent<PlotsManager>().Harvesting();
-    // }
+    public void Print()
+    {
+        // print info for testing
+        Debug.Log($"{crop.cropName}, now is stage {currentStage}");
+    }
+
+    public void Growing()
+    {
+        growStage++;
+        SetUpGrowGap(growStage);
+    }
+
+    public void SetUpGrowGap(int growStage)
+    {
+        // convert enum to int solution reference:
+        // https://forum.unity.com/threads/switching-enum-int.321451/
+        switch (growStage)
+        {
+            case (int) Grow.seed:
+                currentStage = "seed";
+                growGap = crop.sprout_gtime;
+                break;
+            case (int) Grow.sprout:
+                currentStage = "sprout";
+                growGap = crop.small_gtime;
+                break;
+            case (int) Grow.small:
+                currentStage = "small";
+                growGap = crop.medium_gtime;
+                break;
+            case (int) Grow.medium:
+                currentStage = "medium";
+                growGap = crop.mature_gtime;
+                break;
+            case (int) Grow.mature:
+                currentStage = "mature";
+                break;
+            default:
+                break;
+        }
+    }
+
 }
