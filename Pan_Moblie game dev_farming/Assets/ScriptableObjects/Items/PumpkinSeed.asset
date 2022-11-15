@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f31d2d675a308a489671739b2434034, type: 3}
-  m_Name: CarrotSeed
+  m_Name: PumpkinSeed
   m_EditorClassIdentifier: 
-  itemName: CarrotSeed
-  itemIcon: {fileID: 21300000, guid: 2597146da57814c789a59eda5740c9bf, type: 3}
+  itemName: PumpkinSeed
+  itemIcon: {fileID: 21300000, guid: 738078985c017481f8d443cf821e26b5, type: 3}
   itemType: seed
   itemHold: 1
   sellGold: 0
-  itemDescription: 'A bag of Carrot seeds.
+  itemDescription: 'A bag of Pumpkin seeds.
 
     Grow in any season.'

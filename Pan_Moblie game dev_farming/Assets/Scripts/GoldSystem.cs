@@ -16,7 +16,7 @@ public class GoldSystem : MonoBehaviour
         set
         {
             gold = value;
-            goldLabel.GetComponent<TMP_Text>().text = "GOLD: " + gold;
+            goldLabel.GetComponent<TMP_Text>().text = gold.ToString();
         }
     }
 

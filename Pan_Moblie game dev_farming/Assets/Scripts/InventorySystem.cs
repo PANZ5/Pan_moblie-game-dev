@@ -32,7 +32,7 @@ public class InventorySystem : MonoBehaviour
 
         // assign scriptable object data to slot
         newItem.slotItem = item;
-        newItem.slotIcon.sprite = item.itemIcon;
-        newItem.slotAmount.text = item.itemHold.ToString();
+        // newItem.slotIcon.sprite = item.itemIcon;
+        // newItem.slotAmount.text = item.itemHold.ToString();
     }
 }

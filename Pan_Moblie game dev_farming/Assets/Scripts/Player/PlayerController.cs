@@ -8,6 +8,13 @@ public class PlayerController : MonoBehaviour
 
     public Rigidbody2D rb;
 
+    // Filtering which layer of colliders will block the player
+    public ContactFilter2D movementFilter;
+    // The colliders which get by the player (or by Cast() function)
+    private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+    // Movement-Smoothing amount
+    public float collisionOffset = 0.05f;
+
     // Animators
     public Animator bodyAnimator;
     public Animator armAnimator;
@@ -39,6 +46,31 @@ public class PlayerController : MonoBehaviour
     // FixedUpdate is called once per physics update (50 times per second)
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        bool success = MovePlayer(movement);
+        if (!success)
+        {
+            // If the player can't move, try to move in the horizontal direction
+            success = MovePlayer(new Vector2(movement.x, 0));
+            if (!success)
+            {
+                // If the player can't move in the horizontal direction, try to move in the vertical direction
+                success = MovePlayer(new Vector2(0, movement.y));
+            }
+        }
+    }
+
+    public bool MovePlayer(Vector2 direction)
+    {
+        int count = rb.Cast(
+            direction, 
+            movementFilter, 
+            castCollisions, 
+            (moveSpeed * Time.fixedDeltaTime + collisionOffset));
+        
+        if (count == 0)
+        {
+            rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+            return true;
+        } else return false;
     }
 }
