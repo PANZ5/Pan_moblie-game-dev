@@ -20,13 +20,16 @@ public class PlayerController : MonoBehaviour
     public Animator armAnimator;
     public Animator hairAnimator;
 
+    // Joystick
+    public Joystick joystick;
+
     Vector2 movement;
 
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
+        movement.x = joystick.Horizontal;
+        movement.y = joystick.Vertical;
 
         // Animations
         // Body
