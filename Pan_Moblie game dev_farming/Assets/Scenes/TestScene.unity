@@ -592,9 +592,13 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1354915858320347234, guid: 1c68f4b9a44952243880a09255471193, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+    - target: {fileID: 1354915858320347233, guid: 1c68f4b9a44952243880a09255471193, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354915858320347233, guid: 1c68f4b9a44952243880a09255471193, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1354915857140858569, guid: 1c68f4b9a44952243880a09255471193, type: 3}
@@ -11578,9 +11582,13 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1354915858320347234, guid: 1c68f4b9a44952243880a09255471193, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+    - target: {fileID: 1354915858320347233, guid: 1c68f4b9a44952243880a09255471193, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354915858320347233, guid: 1c68f4b9a44952243880a09255471193, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1354915857140858569, guid: 1c68f4b9a44952243880a09255471193, type: 3}
@@ -12311,9 +12319,13 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1354915858320347234, guid: 1c68f4b9a44952243880a09255471193, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+    - target: {fileID: 1354915858320347233, guid: 1c68f4b9a44952243880a09255471193, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1354915858320347233, guid: 1c68f4b9a44952243880a09255471193, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1354915858320347235, guid: 1c68f4b9a44952243880a09255471193, type: 3}
       propertyPath: crop
